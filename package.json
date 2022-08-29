@@ -1,0 +1,17 @@
+{
+  "name": "GameOfLife",
+  "version": "1.0.0",
+  "main": "gameoflife.js",
+  "scripts": {
+    "start": "nodemon './/gameOfLife.js'",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.0.1",
+    "nodemon": "^2.0.19"
+  },
+  "description": ""
+}
