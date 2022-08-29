@@ -1,14 +1,17 @@
 const GameOfLife = (str) => {
   const mas = str.split("_").map((item) => item.split(""));
 
-  const countLiveCeils = (n, m, mas) => {
+  const countLiveCeils = (n, m) => {
     let countLive = 0;
+
     for (let i = n - 1; i <= n + 1; i++) {
       for (let j = m - 1; j <= m + 1; j++) {
+        //Исключение выхода за пределы
         if (i < 0 || j < 0) continue;
         if (i >= mas.length || j >= mas[0].length) continue;
+        //Исключение той же клетки
         if (i === n && j === m) continue;
-
+        //Только ближайшие клетки
         if (Math.abs(i - n) <= 1 && Math.abs(j - m) <= 1) {
           if (mas[i][j] === "1") {
             countLive++;
@@ -39,7 +42,5 @@ const GameOfLife = (str) => {
   }
   return resultMas.map((item) => item.join("")).join("_");
 };
-
-console.log(GameOfLife("000_111_000"));
 
 module.exports = { GameOfLife };
